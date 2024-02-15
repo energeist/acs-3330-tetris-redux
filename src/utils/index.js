@@ -178,7 +178,7 @@ export const defaultState = () => {
     // set the index of the next shape to a new random shape
     nextShape: randomShape(),
     // Tell the game that it's currently running
-    isRunning: true,
+    isRunning: false,
     // Set the score to 0
     score: 0,
     // Set the default speed
