@@ -6,6 +6,7 @@ import NextBlock from './components/NextBlock'
 import ScoreBoard from './components/ScoreBoard'
 import Controls from './components/Controls'
 import MessagePopup from './components/MessagePopup';
+import Instructions from './components/Instructions';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <ScoreBoard />
       <Controls />
       <MessagePopup />
+      <Instructions />
     </div>
   );
 }

@@ -98,7 +98,8 @@ code {
   and 'b'. The '.' represents an empty cell on the grid. */
   grid-template-areas: "h h h"
                        "l c r"
-                       ". b .";
+                       ". b ."
+                       "i i i";
 }
 
 /* Grid Square */
@@ -152,6 +153,14 @@ code {
 /* score-board */
 .score-board {
   grid-area: r;
+}
+
+.instructions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  grid-area: i;
 }
 
 /* controls */

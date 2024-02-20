@@ -128,6 +128,6 @@ export default function Controls(props) {
           handleControlEvent('down')
         }
       }>Down</button>
-    </div>
+    </div>   
   )
 }
