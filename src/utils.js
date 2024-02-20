@@ -181,8 +181,12 @@ export const defaultState = () => {
     isRunning: false,
     // Set the score to 0
     score: 0,
+    // Set the number of completed rows to 0
+    completedRows: 9,
     // Set the default speed
     speed: 1000,
+    // Set default level to 1
+    level: 1,
     // Game isn't over yet
     gameOver: false
   }
@@ -265,5 +269,8 @@ export const checkRows = (grid) => {
       grid.unshift(Array(10).fill(0))
     }
   }
-  return points[completedRows]
+
+  return [points[completedRows], completedRows]
 }
+
+

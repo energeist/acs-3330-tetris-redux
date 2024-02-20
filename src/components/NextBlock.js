@@ -8,12 +8,12 @@ import { shapes } from '../utils'
 export default function NextBlock(props) {
   const nextShape = useSelector(state => state.nextShape)
 
-  const block = shapes[nextShape][0] // Get the first rotation
-  // Map the block to the grid
-  const grid = block.map((rowArray, row) => {
+  const box = shapes[nextShape][0]
+
+  const grid = box.map((rowArray, row) => {
     return rowArray.map((square, col) => {
-      const color = square ? nextShape : 0
-      return <GridSquare key={`${row}${col}`} color={color} />
+    // make the changes here: 
+      return <GridSquare key={`${row}${col}`} color={square === 0 ? 0 : nextShape} />
     })
   })
   

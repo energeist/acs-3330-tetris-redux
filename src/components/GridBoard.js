@@ -8,7 +8,7 @@ import { useSelector } from 'react-redux'
 // Represents a 10 x 18 grid of grid squares
 
 export default function GridBoard(props) {
-  const { grid, shape, rotation, x, y, isRunning, speed } = useSelector(state => state)
+  const { grid, shape, rotation, x, y } = useSelector(state => state)
 
   const block = shapes[shape][rotation]
   const blockColor = shape

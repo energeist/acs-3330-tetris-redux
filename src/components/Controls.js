@@ -11,6 +11,7 @@ export default function Controls(props) {
   const requestRef = useRef()
   const lastUpdateTimeRef = useRef(0)
   const progressTimeRef = useRef(0)
+  const speedRef = useRef(1000)
 
   const update = (time) => {
     requestRef.current = requestAnimationFrame(update)
@@ -19,6 +20,9 @@ export default function Controls(props) {
     }
     if (!lastUpdateTimeRef.current) {
       lastUpdateTimeRef.current = time
+    }
+    if (!speedRef.current) {
+      speedRef.current = speed
     }
     const deltaTime = time - lastUpdateTimeRef.current
     progressTimeRef.current += deltaTime
@@ -33,7 +37,7 @@ export default function Controls(props) {
   useEffect(() => {
     requestRef.current = requestAnimationFrame(update)
     return () => cancelAnimationFrame(requestRef.current)
-  }, [isRunning])
+  }, [isRunning, speed])
 
   return (
     <div className="controls">

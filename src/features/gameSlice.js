@@ -70,9 +70,24 @@ export const gameSlice = createSlice({
 				state.gameOver = true
 				return state
 			}
-
+      
 			// Update the score based on if rows were completed or not
-			state.score += checkRows(newGrid)
+      // apparently redux or react doesn't like direct array decomposition so it needs to be assigned to a variable first
+      let result = checkRows(newGrid)
+
+			state.score += parseInt(result[0])
+      state.completedRows += parseInt(result[1])
+
+      // Check to see if a new level (10 rows) has been reached and decrease speed by 50ms
+      if (state.completedRows >= (state.level * 10)) {
+        state.level += 1
+      }
+
+      let newSpeed = 1000 - ((state.level - 1) * 100)
+      if (state.speed !== newSpeed) {
+        state.speed = newSpeed
+      }
+
 			return state
 		},
     rotate: (state) => {
